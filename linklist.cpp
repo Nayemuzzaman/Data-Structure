@@ -37,11 +37,24 @@ void insert(int value){
     }
 }
 
+void beginInsert(int value){
+        struct Node* temp= (struct Node*)malloc( sizeof(struct Node));
+        temp->data = value;
+        temp -> link = head;
+        head = temp;
+}
+
 int main(){
     head = NULL;
+
+
     insert(1);
     insert(4);
     insert(3);
+
+    beginInsert(1);
+    beginInsert(3);
+    beginInsert(4);
 
     print();
     return 0;
